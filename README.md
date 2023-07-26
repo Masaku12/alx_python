@@ -1,4 +1,4 @@
-# README for Python Projects
+# README for ALX Python Projects
 
 ## Overview
 
@@ -23,7 +23,7 @@ Explain how to install the project on the user's local machine. Include step-by-
 
 ```bash
 # Example installation steps
-$ git clone <repository_url>
+$ git clone <https://github.com/Masaku12/alx_python >
 $ cd project_directory
 $ pip install -r requirements.txt
 ```
