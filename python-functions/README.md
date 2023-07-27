@@ -32,6 +32,8 @@ guillaume@ubuntu:~/$
 - Directory: `python-functions`
 - File: `0-sum.py`
 
+__________________________________________________________________________
+
 ## 1. a ^ b
 
 Write a function that computes a to the power of b and return the value.
@@ -68,6 +70,8 @@ guillaume@ubuntu:~/$
 - Directory: `python-functions`
 - File: `1-power.py`
 
+__________________________________________________________________________
+
 ## 2. Temperature Converter Function
 
 Write a Python function called `convert_to_celsius` that takes a temperature in Fahrenheit as input and returns the temperature in Celsius.
@@ -102,6 +106,8 @@ guillaume@ubuntu:~/$
 - GitHub repository: `alx_python`
 - Directory: `python-functions`
 - File: `2-temperature.py`
+
+______________________________________________________________________________________________________
 
 ## 3. String Manipulation Function
 
@@ -139,6 +145,8 @@ guillaume@ubuntu:~/$
 - Directory: `python-functions`
 - File: `3-string.py`
 
+________________________________________________________________________________________________
+
 ## 4. Fibonacci Sequence Function
 
 Write a Python function called `fibonacci_sequence` that takes a number `n` as input and returns a list of the first `n` Fibonacci numbers.
@@ -148,7 +156,7 @@ Write a Python function called `fibonacci_sequence` that takes a number `n` as i
 - You are not allowed to import any module.
 - Return an empty list if the it is not possible to generate the Fibonacci numbers for `n`
 
-You don’t need to understand __import__
+You don’t need to understand **import**
 
 ```
 guillaume@ubuntu:~/$ cat 4-main.py
@@ -175,6 +183,8 @@ guillaume@ubuntu:~/$
 - GitHub repository: `alx_python`
 - Directory: `python-functions`
 - File: `4-fibonacci.py`
+
+____________________________________________________________________________________________
 
 ## 5. Prime Number Function
 
@@ -211,6 +221,8 @@ guillaume@ubuntu:~/$
 - GitHub repository: `alx_python`
 - Directory: `python-functions`
 - File: `5-prime.py`
+
+__________________________________________________________________________________________________
 
 ## 6. Password Validation Function
 
