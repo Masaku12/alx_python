@@ -1,6 +1,11 @@
 def pow(a, b):
-    return a ^ b
-
-if __name__ == "__main__":
-    value = pow(a, b)
-    print("The value is:", value)
+    value = 1
+    
+    if b < 0:
+        a = 1 / a
+        b = abs(b)
+        
+    for _ in range(b):
+        value *= a
+        
+    return value
