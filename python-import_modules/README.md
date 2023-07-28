@@ -105,3 +105,100 @@ guillaume@ubuntu:~/$
 - GitHub repository: `alx_python`
 - Directory: `python-import_modules`
 - File: `2-variable_load.py`
+
+## 3. Integers division with debug
+
+Write a function that divides 2 integers and prints the result.
+
+- Prototype: def safe_print_division(a, b):
+- You can assume that a and b are integers
+- The result of the division should print on the finally: section preceded by Inside result:
+- Returns the value of the division, otherwise: None
+- You have to use try: / except: / finally:
+- You have to use "{}".format() to print the result
+- You are not allowed to import any module
+
+```
+guillaume@ubuntu:~/$ cat 3-main.py
+#!/usr/bin/python3
+safe_print_division = __import__('3-safe_print_division').safe_print_division
+
+a = 12
+b = 2
+result = safe_print_division(a, b)
+print("{:d} / {:d} = {}".format(a, b, result))
+
+a = 12
+b = 0
+result = safe_print_division(a, b)
+print("{:d} / {:d} = {}".format(a, b, result))
+
+guillaume@ubuntu:~/$ ./3-main.py
+Inside result: 6.0
+12 / 2 = 6.0
+Inside result: None
+12 / 0 = None
+guillaume@ubuntu:~/$ 
+```
+
+**Repo:**
+
+- GitHub repository: `alx_python`
+- Directory: `python-import_modules``
+- File: `3-safe_print_division.py`
+
+## 4. Raise exception
+
+Write a function that raises a type exception.
+
+- Prototype: def raise_exception():
+- You are not allowed to import any module
+
+```
+guillaume@ubuntu:~/$ cat 4-main.py
+#!/usr/bin/python3
+raise_exception = __import__('4-raise_exception').raise_exception
+
+try:
+    raise_exception()
+except TypeError as te:
+    print("Exception raised")
+
+guillaume@ubuntu:~/$ ./4-main.py
+Exception raised
+guillaume@ubuntu:~/$ 
+```
+
+**Repo:**
+
+- GitHub repository: `alx_python`
+- Directory: `python-import_modules`
+- File: `4-raise_exception.py`
+
+## 5. Raise a message
+
+Write a function that raises a name exception with a message.
+
+- Prototype: `def raise_exception_msg(message=""):`
+- You are not allowed to import any module
+
+```
+guillaume@ubuntu:~/$ cat 5-main.py
+#!/usr/bin/python3
+raise_exception_msg = __import__('5-raise_exception_msg').raise_exception_msg
+
+try:
+    raise_exception_msg("C is fun")
+except NameError as ne:
+    print(ne)
+
+guillaume@ubuntu:~/$ ./5-main.py
+C is fun
+guillaume@ubuntu:~/$ 
+```
+
+**Repo:**
+
+- GitHub repository: `alx_python`
+- Directory: `python-import_modules`
+- File: `5-raise_exception_msg.py`
