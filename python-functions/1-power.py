@@ -8,4 +8,4 @@ def pow(a, b):
     for _ in range(b):
         value *= a
         
-    return value
+    return value(value, 2)
