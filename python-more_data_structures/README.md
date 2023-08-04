@@ -72,7 +72,7 @@ guillaume@ubuntu:~/$
 
 Write a function that replaces or adds key/value in a dictionary.
 
-- Prototype: def update_dictionary(a_dictionary, key, value):
+- Prototype: `def update_dictionary(a_dictionary, key, value):`
 - key argument will be always a string
 - value argument will be any type
 - If a key exists in the dictionary, the value will be replaced
@@ -170,7 +170,7 @@ guillaume@ubuntu:~/$
 
 Write a function that returns a list with all values multiplied by a number without using any loops.
 
-- Prototype: def multiply_list_map(my_list=[], number=0):
+- Prototype: `def multiply_list_map(my_list=[], number=0):`
 - Returns a new list:
   - Same length as my_list
   - Each value should be multiplied by number
