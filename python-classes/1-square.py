@@ -22,32 +22,8 @@ class square:
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
-    
-    def get_size(self):
-        """
-        Retrieves the current size of the square.
+        else:
+            self.__size = size
         
-        Returns:
-            int: The size of the square.
-        """
-        return self.__size
-    
-    def set_size(self, new_size):
-        """
-        Sets a new size for the square.
-        
-        Args:
-            new_size (int): The new size to set.
-            
-        Raises:
-            TypeError: If new_size is not an integer.
-            ValueError: If new_size is less than 0.
-        """
-        if not isinstance(new_size, int):
-            raise TypeError("size must be an integer")
-        if new_size < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = new_size
