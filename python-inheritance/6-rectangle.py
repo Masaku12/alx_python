@@ -43,10 +43,18 @@ class Rectangle(BaseGeometry):
         width: The width of the rectangle
         height: The height of the rectangle
     """
-    
-    self.__width = 0 # initialized to 0
-    self.__height = 0 # initialized to 0
-    self.integer_validator("width", width)
-    self.integer_validator("height", height)
-    self.__width = width
-    self.__height = height
+    def __init__(self, width, height):
+        """
+        Initializes a rectangle instance with width and height
+        
+        Args:
+            width: The width of the rectangle
+            height: The height of the rectangle
+        """
+        
+        self.__width = 0 # initialized to 0
+        self.__height = 0 # initialized to 0
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
