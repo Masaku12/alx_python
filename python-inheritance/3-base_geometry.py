@@ -8,7 +8,4 @@ class BaseGeometry:
     """
     pass # an empty block
 
-bg = BaseGeometry()
-
-print(dir(bg))
-print(dir(BaseGeometry))
+print(BaseGeometry)
