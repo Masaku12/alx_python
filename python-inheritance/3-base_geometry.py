@@ -7,3 +7,7 @@ class BaseGeometry:
     This is a base class for geometry-related classes
     """
     pass # an empty block
+
+bg = BaseGeometry()
+
+print(dir(bg))
