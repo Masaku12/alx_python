@@ -11,3 +11,4 @@ class BaseGeometry:
 bg = BaseGeometry()
 
 print(dir(bg))
+print(dir(BaseGeometry))
