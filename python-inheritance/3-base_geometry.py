@@ -9,6 +9,6 @@ class BaseGeometry:
     pass # an empty block
 
 bg = BaseGeometry()
-print(bg)
-print(dir(bg))
-print(dir(BaseGeometry))
+print(repr(bg))
+print(sorted(dir(bg)))
+print(sorted(dir(BaseGeometry)))
