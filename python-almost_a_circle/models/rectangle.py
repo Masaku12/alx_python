@@ -160,3 +160,35 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) > 4:
             self.y = args[4]
+            
+    def update(self, *args, **kwargs):
+        """
+        Updates the Rectangular instance attributes using available arguments.
+        
+        Args:
+            *args: Variable number of arguments
+                - if not empty:
+                    - 1st argument updates the id attribute
+                    - 2nd argument updates the width attribute
+                    - 3rd argument updates the height attribute
+                    - 4th argument updates the x attribute
+                    - 5th argument updates the y attribute
+            **kwargs: Variable number of keyword arguments
+                - Every key-value pair updates the next attribute of the instance
+                
+            If both *args and **kwargs are available, **kwargs is avoided
+        """
+        if args:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.width = args[1]
+            if len(args) > 2:
+                self.height = args[2]
+            if len(args) > 3:
+                self.x = args[3]
+            if len(args) > 4:
+                self.y = args[4]
+            else:
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
