@@ -48,4 +48,4 @@ class Square(Rectangle):
         """
         Return a string(str) that represents the Square instance
         """
-        return "[Square] ({:d}) {:d}/{:d}".format(self.id, self.x, self.y, self.size)
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x, self.y, self.size)
