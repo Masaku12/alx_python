@@ -128,3 +128,17 @@ class Rectangle(Base):
             str: A string that represents the rectangle instance
         """
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.x, self.y, self.width, self.height)
+    
+    def display(self):
+        """
+        Displays the Rectangle instance by printing to stdout the # character and takes care of x and y attributes
+        
+        Returns:
+            None
+        """
+        
+        for _ in range(self.__y):
+            print()
+            
+        for _ in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
