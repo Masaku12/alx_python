@@ -16,7 +16,18 @@ def get_user_id(username, token):
     headers = {"Authorization": f"Bearer {token}"}
     
     response = requests.get(url, headers=headers)
-    data = response.json()
+    
+    # Check if the response is valid JSON
+    try:
+        data = response.json()
+    except:
+        return None
+    
+    # Check if response contains expected fields
+    if "id" in data:
+        return data["id"]
+    else:
+        return None
     
 def main():
     """
