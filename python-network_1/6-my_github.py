@@ -15,16 +15,23 @@ def get_user_id(username, token):
     url = f"https://api.github.com/users/{username}"
     headers = {"Authorization": f"Bearer {token}"}
     
-    response = requests.get(url, headers=headers)
-    
     # Check if the response is valid JSON
     try:
+        # Send a GET request to Github API
+        response = requests.get(url, headers=headers)
+        response.raise_for_status() # check for successful request status
         data = response.json()
+        
         if "id" in data:
             return data["id"]
         else:
             return None
+    except requests.exceptions.RequestException as e:
+        # Handle request exceptions
+        print(f"An error occured: {e}")
+        return None
     except ValueError:
+        # Handle JSON parsing error
         return None
     
 def main():
