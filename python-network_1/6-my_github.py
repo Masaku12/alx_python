@@ -36,11 +36,15 @@ def get_user_id(username, token):
     
 def main():
     """
-    Main function that prompts the user to enter their Github username and personal access token
-    It will also display their user ID
+    Main function that reads Github username and personal access token as cmd line args
+    It will also display their user ID or 'None' if not found
     """
-    username = input("Enter your Github Username: ")
-    token = input("Enter your personal access token: ")
+    if len(sys.argv) != 3:
+        print("Usage: my_github.py <GitHub_username> <personal_access_token")
+        sys.exit(1)
+    
+    username = sys.argv[1]
+    token = sys.argv[2]
     
     user_id = get_user_id(username, token)
     if user_id is not None:
