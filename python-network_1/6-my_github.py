@@ -20,13 +20,11 @@ def get_user_id(username, token):
     # Check if the response is valid JSON
     try:
         data = response.json()
-    except:
-        return None
-    
-    # Check if response contains expected fields
-    if "id" in data:
-        return data["id"]
-    else:
+        if "id" in data:
+            return data["id"]
+        else:
+            return None
+    except ValueError:
         return None
     
 def main():
@@ -39,9 +37,9 @@ def main():
     
     user_id = get_user_id(username, token)
     if user_id is not None:
-        print(f"Your Github User ID is: {user_id}")
+        print(user_id)
     else:
-        print("Unable to retrieve Github user ID")
+        print("None")
     
     if __name__ == "__main__":
         main()
