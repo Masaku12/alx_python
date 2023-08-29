@@ -15,7 +15,7 @@ def get_user_id(username, token):
         int: The Github user ID
     """
     url = f"https://api.github.com/users/{username}"
-    headers = {"Authorization": f"Bearer {token}"}
+    headers = {"Authorization": f"token {token}"}
     
     # Check if the response is valid JSON
     try:
@@ -42,7 +42,7 @@ def main():
     It will also display their user ID or 'None' if not found
     """
     if len(sys.argv) != 3:
-        print("Usage: my_github.py <GitHub_username> <personal_access_token")
+        print("Usage: my_github.py <GitHub_username> <personal_access_token>")
         sys.exit(1)
     
     username = sys.argv[1]
