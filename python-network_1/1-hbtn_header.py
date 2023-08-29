@@ -12,6 +12,6 @@ response = requests.get(url)
 if 'X-Request-Id' in response.headers:
     # Extract the value of the 'X-Requesr-Id' header from the response
     request_id = response.headers['X-Request-Id']
-    print("X-Request-Id.", request_id)
+    print(request_id)
 else:
     print("X-Request-Id header not found in the response.")
