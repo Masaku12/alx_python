@@ -38,7 +38,10 @@ def main():
     token = input("Enter your personal access token: ")
     
     user_id = get_user_id(username, token)
-    print(f"Your Github User ID is: {user_id}")
+    if user_id is not None:
+        print(f"Your Github User ID is: {user_id}")
+    else:
+        print("Unable to retrieve Github user ID")
     
     if __name__ == "__main__":
         main()
