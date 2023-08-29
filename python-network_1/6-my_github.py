@@ -14,22 +14,45 @@ def get_user_id(username, token):
     Returns:
         int: The Github user ID
     """
-    url = 'https://api.github.com/users/{}'.format(username)
-    response = requests.get(url, auth=(username, token))
+    url = f"https://api.github.com/users/{username}"
+    headers = {"Authorization": f"Bearer {token}"}
     
-    if response.status_code == 200:
-        print(response.json().get('id'))
-    else:
-        print('None')
+    # Check if the response is valid JSON
+    try:
+        # Send a GET request to Github API
+        response = requests.get(url, headers=headers)
+        response.raise_for_status() # check for successful request status
+        data = response.json()
+        
+        if "id" in data:
+            return data["id"]
+        else:
+            return None
+    except requests.exceptions.RequestException as e:
+        # Handle request exceptions
+        print(f"An error occured: {e}")
+        return None
+    except ValueError:
+        # Handle JSON parsing error
+        return None
     
-if __name__ == "__main__":
-    # Get GitHub username and personal access token using cmd line args
+def main():
+    """
+    Main function that reads Github username and personal access token as cmd line args
+    It will also display their user ID or 'None' if not found
+    """
+    if len(sys.argv) != 3:
+        print("Usage: my_github.py <GitHub_username> <personal_access_token")
+        sys.exit(1)
+    
     username = sys.argv[1]
     token = sys.argv[2]
     
-    # Retrieve and print the user ID
     user_id = get_user_id(username, token)
     if user_id is not None:
         print(user_id)
     else:
-        print('None')
+        print("None")
+    
+if __name__ == "__main__":
+    main()
