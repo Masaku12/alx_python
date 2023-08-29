@@ -11,7 +11,7 @@ response = requests.get(url)
 print("Body response:")
 
 # Displaying the type of the content in the response
-print(f"    - type: {type(response.text)}")
+print("\t- type:", type(response.text))
 
 # Displaying the actual content of the response
-print(f"    - content: {response.text}")
+print("\t- content:", response.text)
