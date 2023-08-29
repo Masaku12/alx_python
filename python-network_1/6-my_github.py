@@ -40,7 +40,7 @@ def main():
     It will also display their user ID or 'None' if not found
     """
     if len(sys.argv) != 3:
-        print("Usage: my_github.py <GitHub_username> <personal_access_token")
+        print("Usage: 6-my_github.py <GitHub_username> <personal_access_token")
         sys.exit(1)
     
     username = sys.argv[1]
