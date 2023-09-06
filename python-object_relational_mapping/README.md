@@ -89,6 +89,8 @@ After fetching the results from the database, you will need to figure out how to
 - Directory: `python-object_relational_mapping`
 - File: `0-select_states.py`
 
+________________________________________________________________
+
 ### 1. Filter states
 
 Write a script that lists all states with a name starting with N (upper N) from the database `hbtn_0e_0_usa`:
@@ -125,6 +127,8 @@ guillaume@ubuntu:~/$
 - Directory: `python-object_relational_mapping`
 - File: `1-filter_states.py`
 
+________________________________________________________________
+
 ### 2. Filter states by user input
 
 Write a script that takes in an argument and displays all values in the `states` table of `hbtn_0e_0_usa` where `name` matches the argument.
@@ -160,6 +164,8 @@ guillaume@ubuntu:~/$
 - GitHub repository: `alx_python`
 - Directory: `python-object_relational_mapping`
 - File: `2-my_filter_states.py`
+
+________________________________________________________________
 
 ### 3. SQL Injection
 
@@ -213,6 +219,8 @@ Check out the example under MySQLdb in the [documentation here](https://mysqlcli
 - GitHub repository: `alx_python`
 - Directory: `python-object_relational_mapping`
 - File: `3-my_safe_filter_states.py`
+
+________________________________________________________________
 
 ### 4. Cities by states
 
@@ -279,6 +287,8 @@ No test cases needed
 - Directory: `python-object_relational_mapping`
 - File: `4-cities_by_state.py`
 
+________________________________________________________________
+
 ### 5. All cities by state
 
 Write a script that takes in the name of a state as an argument and lists all `cities` of that state, using the database `hbtn_0e_4_usa`
@@ -334,6 +344,8 @@ No test cases needed
 - Directory: `python-object_relational_mapping`
 - File: `5-filter_cities.py`
 
+________________________________________________________________
+
 ### 6. First state model
 
 Write a python file that contains the class definition of a `State` and an instance `Base = declarative_base()`:
@@ -385,6 +397,8 @@ No test cases needed
 - Directory: `python-object_relational_mapping`
 - File: `model_state.py`
 
+________________________________________________________________
+
 ### 7. All states via SQLAlchemy
 
 Write a script that lists all `State` objects from the database `hbtn_0e_6_usa`
@@ -420,6 +434,8 @@ No test cases needed
 - Directory: `python-object_relational_mapping`
 - File: `7-model_state_fetch_all.py`
 
+________________________________________________________________
+
 ### 8. First state
 
 Write a script that prints the first `State` object from the database `hbtn_0e_6_usa`
@@ -446,6 +462,8 @@ No test cases needed
 - GitHub repository: `alx_python`
 - Directory: `python-object_relational_mapping`
 - File: `8-model_state_fetch_first.py`
+
+________________________________________________________________
 
 ### 9. Contains `a`
 
