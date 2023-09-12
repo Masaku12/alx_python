@@ -16,7 +16,7 @@ def list_states_with_N(mysqlusername, mysqlpassword, mysqldatabase):
         cursor = db.cursor()
 
         # Execute the SQL query to fetch states starting with "N"
-        query = "SELECT * FROM states WHERE name LIKE 'N% ORDER BY states.id"
+        query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id"
         cursor.execute(query)
         states = cursor.fetchall()
 
