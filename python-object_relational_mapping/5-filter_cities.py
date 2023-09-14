@@ -6,7 +6,7 @@ import sys
 if __name__ == "__main__":
     # Check if the number of cmd-line args is given
     if len(sys.argv) != 5:
-        print("Usage: {}".format(sys.argv[1:5]))
+        print(f"Usage: {sys.argv[0]}")
         sys.exit(1)
 
     # Extract the cmd-line args
@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
         # Check if there are results
         if not results:
-            print("No cities found for state {}".format(state_name))
+            print(f"No cities found for state {state_name}")
 
         else:
             # Display the results with coma separation
@@ -59,5 +59,5 @@ if __name__ == "__main__":
 
     except MySQLdb.Error as e:
         # Handle SQL errors
-        print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
+        print(f"MySQL Error {e.args[0]}: {e.args[1]}")
         sys.exit(1)
