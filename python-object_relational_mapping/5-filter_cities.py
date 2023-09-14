@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
         # Display the results
         for row in results:
-            print(row)
+            print(row)[1]
 
         # Check if there are results
         if not results:
