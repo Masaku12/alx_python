@@ -11,12 +11,10 @@ class State(Base):
     # Sets the table name to "states"
     __tablename__ = 'states'
 
-
     # Defines the columns for the states table
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
-    
-    
-    # Constructor (__init__) for the State class
+
+    # Constructor(__init__) for the State class
     def __init__(self, name):
         self.name = name
