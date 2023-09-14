@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
         # Define the SQL query with a parametized query
         query = (
-            "SELECT cities.id, cities.name "
+            "SELECT cities.id, cities.name, states.name "
             "FROM cities "
             "INNER JOIN states ON cities.state_id = states.id "
             "WHERE states.name = %s "
@@ -43,6 +43,15 @@ if __name__ == "__main__":
         # Display the results
         for row in results:
             print(row)
+
+        # Check if there are results
+        if not results:
+            print("No cities found for state {}".format(state_name))
+
+        else:
+            # Display the results with coma separation
+            city_names = ', '.join(row[1] for row in results)
+            print(city_names)
 
         # Close the cursor and db connection
         cursor.close()
