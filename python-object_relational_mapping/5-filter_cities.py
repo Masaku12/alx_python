@@ -41,7 +41,7 @@ if __name__ == "__main__":
         results = cursor.fetchall()
 
         # Filter and format the results to handle integers
-        cities = [str(row[0]) for row in results]
+        cities = [row[1] for row in results]
 
         # Join the list of strings with commas
         cities_str = ', '.join(cities)
