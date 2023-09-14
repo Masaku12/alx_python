@@ -34,7 +34,7 @@ def search_states(username, password, database, search_name):
         for state in states:
             print(state)
 
-    except MySQLdb.ERROR as e:
+    except MySQLdb.Error as e:
         print(f"Error: {e}")
 
 
