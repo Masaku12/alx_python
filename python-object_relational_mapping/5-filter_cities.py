@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     try:
         # Connect to the MySQL server
-        db = MySQLdb.connect (
+        db = MySQLdb.connect(
             host="localhost",
             port=3306,
             user=username,
@@ -29,7 +29,7 @@ if __name__ == "__main__":
         query = (
             "SELECT cities.id, cities.name "
             "FROM cities "
-            "INNER JOIN state ON cities.state_id = states.id "
+            "INNER JOIN states ON cities.state_id = states.id "
             "WHERE states.name = %s "
             "ORDER BY cities.id "
         )
@@ -40,7 +40,7 @@ if __name__ == "__main__":
         # Fetch all the results from the executed query
         results = cursor.fetchall()
 
-        # Display the results 
+        # Display the results
         for row in results:
             print(row)
 
