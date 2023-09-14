@@ -39,12 +39,7 @@ def search_states(username, password, database, search_name):
 if __name__ == "__main__":
     # Check if the correct number of cmd-line args is present
     if len(sys.argv) != 5:
-        usage = (
-            f"Usage: {sys.argv[0]} "
-            "<username> <password> <database> <state_name>"
-        )
-        print(usage)
-        sys.exit(1)
+        print(f"Usage: {sys.argv[0]}")
 
     # Extract cmd-line args
     username, password, database, search_name = sys.argv[1:5]
