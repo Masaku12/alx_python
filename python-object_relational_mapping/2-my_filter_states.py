@@ -19,7 +19,7 @@ def search_states(username, password, database, search_name):
         # Create the SQL query using the given state name
         query = (
             "SELECT * FROM states "
-            "WHERE name LIKE %s "
+            "WHERE name LIKE BINARY %s "
             "ORDER BY states.id "
         ).format(search_name)
 
@@ -27,7 +27,7 @@ def search_states(username, password, database, search_name):
         search_term = f"{search_name}%"
 
         # Execute the query with the user input as a parameter
-        cursor.execute(query, (search_term,))
+        cursor.execute(query, (search_name,))
         states = cursor.fetchall()
 
         # Display the results
