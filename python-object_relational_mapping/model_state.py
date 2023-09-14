@@ -1,16 +1,25 @@
-"""Import necessary modules from SQLAlchemy"""
+# Import necessary modules from SQLAlchemy
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-"""
-A declarative base instance, which will act as a base class
-"""
+# A declarative base instance, which will act as a base class
 Base = declarative_base()
 
 
-# State class, which reps the "states" table in the database
 class State(Base):
-    # Sets the table name to "states"
+    """
+    This reps a state entity in the database
+
+    Args:
+        name (str): The state's name
+
+    Attributes:
+        id (int): an auto-generated unique identifier
+        name (str): the state's name
+
+    Note: This class maps to state's table in the db
+    """
+    # Set the table name to 'states'
     __tablename__ = 'states'
 
     # Defines the columns for the states table
