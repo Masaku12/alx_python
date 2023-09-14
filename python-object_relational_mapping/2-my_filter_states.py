@@ -40,6 +40,7 @@ if __name__ == "__main__":
     # Check if the correct number of cmd-line args is present
     if len(sys.argv) != 5:
         print(f"Usage: {sys.argv[0]}")
+        sys.exit(1)
 
     # Extract cmd-line args
     username, password, database, search_name = sys.argv[1:5]
