@@ -31,27 +31,17 @@ if __name__ == "__main__":
             "FROM cities "
             "INNER JOIN states ON cities.state_id = states.id "
             "WHERE states.name = %s "
-            "ORDER BY cities.id "
+            "ORDER BY cities.id ASC "
         )
 
         # Execute the query with state_name as a param
         cursor.execute(query, (state_name,))
 
         # Fetch all the results from the executed query
-        results = cursor.fetchall()
+        cities = [row[0] for row in cursor.fetchall()]
 
         # Display the results
-        for row in results:
-            print(row)[1]
-
-        # Check if there are results
-        if not results:
-            print(f"No cities found for state {state_name}")
-
-        else:
-            # Display the results with coma separation
-            city_names = ', '.join(row[1] for row in results)
-            print(city_names)
+        print(", ".join(cities))
 
         # Close the cursor and db connection
         cursor.close()
