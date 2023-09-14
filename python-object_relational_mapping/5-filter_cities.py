@@ -38,8 +38,8 @@ if __name__ == "__main__":
         cursor.execute(query, (state_name,))
 
         # Fetch all the results from the executed query
-        cities = [row[0] for row in cursor.fetchall()]
-
+        cities = [str(row[0]) for row in cursor.fetchall()]
+        
         # Display the results
         print(", ".join(cities))
 
