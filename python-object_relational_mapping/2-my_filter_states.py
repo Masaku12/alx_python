@@ -27,7 +27,7 @@ def search_states(username, password, database, search_name):
         search_term = f"{search_name}%"
 
         # Execute the query with the user input as a parameter
-        cursor.execute(query, (search_name,))
+        cursor.execute(query, (search_term,))
         states = cursor.fetchall()
 
         # Display the results
