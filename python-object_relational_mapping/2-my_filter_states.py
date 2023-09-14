@@ -21,7 +21,7 @@ def search_states(username, password, database, search_name):
             "SELECT * FROM states "
             "WHERE name = %s "
             "ORDER BY states.id "
-        )
+        ).format(search_name)
 
         # Execute the query with the user input as a parameter
         cursor.execute(query, (search_name))
