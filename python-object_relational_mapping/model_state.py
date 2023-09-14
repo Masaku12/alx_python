@@ -1,8 +1,10 @@
-# Import necessary modules from SQLAlchemy
+"""Import necessary modules from SQLAlchemy"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-# A declarative base instance, which will act as a base class
+"""
+A declarative base instance, which will act as a base class
+"""
 Base = declarative_base()
 
 
