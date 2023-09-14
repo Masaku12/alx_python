@@ -19,9 +19,12 @@ def search_states(username, password, database, search_name):
         # Create the SQL query using the given state name
         query = (
             "SELECT * FROM states "
-            "WHERE name COLLATE utf8mb4_general_ci LIKE %s "
+            "WHERE name LIKE %s "
             "ORDER BY states.id "
         ).format(search_name)
+
+        # Modify the search term to be case-insensitive
+        search_term = f"{search_name}%"
 
         # Execute the query with the user input as a parameter
         cursor.execute(query, (search_name,))
