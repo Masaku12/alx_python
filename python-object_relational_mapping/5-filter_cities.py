@@ -41,13 +41,13 @@ if __name__ == "__main__":
         results = cursor.fetchall()
 
         # Filter and format the results to handle integers
-        cities = [
-            str(row[0]) if isinstance(row[0], str) else str(row[0])
-            for row in results
-        ]        
+        cities = [str(row[0]) for row in results]
+
+        # Join the list of strings with commas
+        cities_str = ', '.join(cities)
 
         # Display the results
-        print(", ".join(cities))
+        print(cities_str)
 
         # Close the cursor and db connection
         cursor.close()
