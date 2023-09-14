@@ -38,8 +38,14 @@ if __name__ == "__main__":
         cursor.execute(query, (state_name,))
 
         # Fetch all the results from the executed query
-        cities = [str(row[0]) for row in cursor.fetchall()]
-        
+        results = cursor.fetchall()
+
+        # Filter and format the results to handle integers
+        cities = [
+            str(row[0]) if isinstance(row[0], str) else str(row[0])
+            for row in results
+        ]        
+
         # Display the results
         print(", ".join(cities))
 
