@@ -5,7 +5,7 @@ def pow(a, b):
     elif b < 0:
         return 1 / pow(a, -b)
 
-    result = 1
+    value = 1
     for _ in range(b):
         value *= a
 
