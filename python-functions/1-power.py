@@ -1,11 +1,12 @@
 def pow(a, b):
-    value = 1
-    
-    if b < 0:
-        a = 1 / a
-        b = -b
-        
+    # Check for special cases
+    if b == 0:
+        return 1
+    elif b < 0:
+        return 1 / pow(a, -b)
+
+    result = 1
     for _ in range(b):
         value *= a
-        
+
     return value
