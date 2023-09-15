@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     # Create an SQLAlchemy engine to connect the db
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-              .format(username, password, database))
+                           .format(username, password, database))
 
     # Create an SQLAlchemy session
     Session = sessionmaker(bind=engine)
