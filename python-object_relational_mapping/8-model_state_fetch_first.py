@@ -19,7 +19,7 @@ if __name__ == "__main__":
     username, password, database = sys.argv[1:4]
 
     # Create an SQLAlchemy engine to connect the db
-    engine = ('mysql+mysqldb://{}:{}@localhost:3306/{}'
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
               .format(username, password, database))
 
     # Create an SQLAlchemy session
