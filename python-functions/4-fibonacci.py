@@ -1,13 +1,22 @@
 def fibonacci_sequence(n):
+    # Check for invalid input
     if n <= 0:
         return []
-    elif n == 1:
-        return [0]
-    
-    fibonacci_list = [0, 1]
-    
-    for i in range(2):
-        next_fibonacci = fibonacci_list[-1] + fibonacci_list[-2]
-        fibonacci_list.append(next_fibonacci)
-        
-    return fibonacci_list
+
+    # Initialize a list to store the fibonacci
+    fibonacci_numbers = []
+
+    # Handle the first fibonacci numbers (0, 1)
+    if n >= 1:
+        fibonacci_numbers.append(0)
+
+    if n >= 2:
+        fibonacci_numbers.append(1)
+
+    # Generate the rest of the fibonacci numbers
+    while len(fibonacci_numbers) < n:
+        # Calculate the next fibonacci number
+        next_number = fibonacci_numbers[-1] + fibonacci_numbers[-2]
+        fibonacci_numbers.append(next_number)
+
+    return fibonacci_numbers
