@@ -15,12 +15,11 @@ class BaseGeometry:
         """
         
         raise Exception("area() is not implemented")
-    
-# Create an instance of BaseGeometry
+
+# Create an instance of the class
 bg = BaseGeometry()
-
-# Filter the dir(bg) result to exclude unwanted attributes
-filtered_dir = [item for item in dir(bg) if not item.startswith('__')]
-
-# Print the filtered item
-print(filtered_dir)
+    
+try:
+    print(bg.area())
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
