@@ -15,11 +15,3 @@ class BaseGeometry:
         """
         
         raise Exception("area() is not implemented")
-
-# Create an instance of the class
-bg = BaseGeometry()
-    
-try:
-    print(bg.area())
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
