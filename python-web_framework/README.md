@@ -282,7 +282,7 @@ To be able to solve this task correctly, you will need to understand how to use 
 
 Copy the previous task to a new script that starts a Flask web application:
 
- - Your web application must be listening on 0.0.0.0, port 5000
+ - Your web application must be listening on `0.0.0.0`, `port 5000`
  - Routes:
    - `/`: display “Hello HBNB!”
    - `/hbnb`: display “HBNB”
