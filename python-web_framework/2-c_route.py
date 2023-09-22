@@ -31,7 +31,7 @@ def hbnb():
 
 # Define a route that accepts a dynamic parameter text
 @app.route('/c/<text>', strict_slashes=False)
-def custom_text():
+def custom_text(text):
     """
     Route handler for custom_text page
 
