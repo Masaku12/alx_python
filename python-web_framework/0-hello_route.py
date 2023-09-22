@@ -1,3 +1,4 @@
+# Import the Flask module to create a web app
 from flask import Flask
 
 # Create a Flask web application
