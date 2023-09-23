@@ -75,20 +75,6 @@ def is_number(n):
     """
     return f"{n} is a number"
 
-# Handle invalid input for the /number/<n> route
-app.route('/number/<n>', strict_slashes=False)
-def invalid_number(n):
-    """
-    Route handler for invalid input page
-
-    Args:
-        n (str): The input provided as param
-
-    Returns:
-        str: An error message
-    """
-    abort(404)
-
 if __name__ == "__main__":
     # Start the web app on 0.0.0.0:5000
     app.run(host='0.0.0.0', port=5000)
