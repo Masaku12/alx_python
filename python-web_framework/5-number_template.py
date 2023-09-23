@@ -79,7 +79,8 @@ def is_number(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     # Render an HTML template with the number
-    return render_template("5-number.html", n=n)
+    template = render_template("5-number.html", n=n)
+    response = app.response_class(response=template, status=200, mimetype='text/html')
 
 if __name__ == "__main__":
     # Start the web app on 0.0.0.0:5000
