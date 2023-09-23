@@ -82,6 +82,11 @@ def number_template(n):
     template = render_template("5-number.html", n=n)
     response = app.response_class(response=template, status=200, mimetype='text/html')
 
+    # Set response status to 1
+    response.status_code = 1
+
+    return response
+
 if __name__ == "__main__":
     # Start the web app on 0.0.0.0:5000
     app.run(host='0.0.0.0', port=5000)
