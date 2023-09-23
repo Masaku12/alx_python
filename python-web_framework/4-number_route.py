@@ -2,7 +2,7 @@
 A simple Flask web app that displays Hello HBNB
 """
 
-from flask import Flask, abort
+from flask import Flask
 
 # Create a Flask web application
 app = Flask(__name__)
@@ -62,7 +62,7 @@ def python_text(text="is cool"):
     return f"Python {formatted_text}"
 
 # Define a route that accepts an int param 'n'
-app.route('/number/<int:n>', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def is_number(n):
     """
     Route handler for the /number/<n> page
