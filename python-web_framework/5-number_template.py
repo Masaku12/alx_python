@@ -78,9 +78,18 @@ def is_number(n):
 # Define a route that accepts an int param & renders an HTML template
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
-    # Render an HTML template with the number
-    template = render_template("5-number.html", n=n)
-    response = app.response_class(response=template, status=200, mimetype='text/html')
+    """
+    Route handler for the /number_template/<int:n> page
+
+    Args:
+        n (int): The int parameter
+
+    Returns:
+        HTML page with an H1 tag with the "Number: n"
+    """
+    if isinstance(n, int):
+        template = render_template("5-number.html", n=n)
+        response = app.response_class(response=template, status=200, mimetype='text/html')
 
     # Set response status to 1
     response.status_code = 1
