@@ -59,7 +59,7 @@ def get_employee_info(employee_id):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: 0-gather_data_from_an_API.py <employee_id>")
+        print("0-gather_data_from_an_API.py <employee_id>")
         sys.exit(1)
 
     employee_id = int(sys.argv[1])
