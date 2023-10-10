@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 This script retrieves and displays information on an employee's TODO list
 using REST API. It accepts employee ID as a param and provides details
@@ -51,7 +53,7 @@ def get_employee_info(employee_id):
 
     # Display employee details and task titles
     print(f"Employee {employee_name} is done with "
-          f"{completed_tasks}/{total_tasks} tasks:")
+          f"tasks{completed_tasks}/{total_tasks}")
     for todo in todos_data:
         if todo["completed"]:
             print(f"\t{todo['title']}")
