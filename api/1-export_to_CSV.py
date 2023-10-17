@@ -9,10 +9,10 @@ It also exports the data to a CSV file.
 Usage: 1-export_to_CSV.py <employee_id>
 """
 
-import urllib.request
-import csv  # Import the csv module
-import sys
-import json
+import csv  # Imports the csv module
+import json # Allows working with JSON data
+import sys # Allows cmd-line args during execution
+import urllib.request # Allows the opening of URLs
 
 
 def get_employee_todo_progress(employee_id):
