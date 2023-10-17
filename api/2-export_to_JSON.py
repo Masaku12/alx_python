@@ -18,11 +18,15 @@ def export_employee_todo_data(employee_id):
     and exports the data to a JSON file.
 
     Args:
-        employee_id: The employee ID.
+        employee_id: The employee ID (should be a positive integer).
 
     This function fetches the employee's tasks and details, and exports them to a JSON file
     named USER_ID.json, where USER_ID is the employee's ID.
     """
+    if not employee_id.isdigit() or int(employee_id) <= 0:
+        print("Please enter a valid positive integer for the employee ID.")
+        return
+
     base_url = "https://jsonplaceholder.typicode.com"
     employee_url = f"{base_url}/users/{employee_id}"
     todo_url = f"{base_url}/users/{employee_id}/todos"
