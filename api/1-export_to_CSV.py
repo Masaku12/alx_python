@@ -9,56 +9,50 @@ It also exports the data to a CSV file.
 Usage: 1-export_to_CSV.py <employee_id>
 """
 
-import requests
+import urllib.request
+import csv  # Import the csv module
 import sys
-import csv
+import json
 
 
-def get_employee_info(employee_id):
-    # Defines the base URL for the API
+def get_employee_todo_progress(employee_id):
     base_url = "https://jsonplaceholder.typicode.com"
+    employee_url = f"{base_url}/users/{employee_id}"
+    todo_url = f"{base_url}/users/{employee_id}/todos"
 
-    # Sends a GET request to retrieve employee details
-    employee_response = requests.get(f"{base_url}/users/{employee_id}")
+    try:
+        # Fetch employee details
+        with urllib.request.urlopen(employee_url) as response:
+            if response.getcode() == 200:
+                employee_data = json.loads(response.read().decode())
+                employee_name = employee_data["username"]
+            else:
+                print(f"Error: Unable to fetch employee details. Status Code: {response.getcode()}")
+                return
 
-    # Checks if the request was successful
-    if employee_response.status_code != 200:
-        print("Missing Employee Details")
-        return
+        with urllib.request.urlopen(todo_url) as response:
+            if response.getcode() == 200:
+                todo_data = json.loads(response.read().decode())
+            else:
+                print(f"Error: Unable to fetch TODO list. Status Code: {response.getcode()}")
+                return
 
-    employee_data = employee_response.json()
-    employee_name = employee_data["name"]
-
-    # Sends a GET request to retrieve the employee TODO list details
-    todos_response = requests.get(f"{base_url}/users/{employee_id}/todos")
-
-    if todos_response.status_code != 200:
-        print("Missing TODO List")
-        return
-    
-    todos_data = todos_response.json()
-    
-    # Creates a CSV file for the employee
-    with open(f"{employee_id}.csv", mode='w', newline='') as csv_file:
-        fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-
-        writer.writeheader()
-        for todo in todos_data:
-            writer.writerow({
-                "USER_ID": employee_id,
-                "USERNAME": employee_name,
-                "TASK_COMPLETED_STATUS": str(todo["completed"]),
-                "TASK_TITLE": todo["title"],
-            })
-  
-    print(f"Employee {employee_name}'s task data has been exported to {employee_id}.csv")
-
+        csv_filename = f"{employee_id}.csv"
+        with open(csv_filename, mode='w', newline='') as csv_file:
+            csv_writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
+            for task in todo_data:
+                completed_status = "True" if task["completed"] else "False"
+                csv_writer.writerow([employee_id, employee_name, completed_status, task["title"]])
+    except urllib.error.URLError as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("1-export_to_CSV.py <employee_id>")
+        print("Usage: python script.py <employee_id>")
         sys.exit(1)
 
-    employee_id = int(sys.argv[1])
-    get_employee_info(employee_id)
+    try:
+        employee_id = int(sys.argv[1])
+        get_employee_todo_progress(employee_id)
+    except ValueError:
+        print("Please enter a valid integer for the employee ID.")
